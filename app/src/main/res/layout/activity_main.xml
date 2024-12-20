@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12dp"
+    android:background="#FFFFFF">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Titolo -->
+        <TextView
+            android:id="@+id/text_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Gestione orario lavorativo"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:paddingBottom="16dp"
+            android:textColor="#000000"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Orario Entrata -->
+        <TextView
+            android:id="@+id/text_entrata"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Orario entrata: --"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:textColor="#4CAF50"
+            app:layout_constraintTop_toBottomOf="@id/text_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Tempo Trascorso -->
+        <TextView
+            android:id="@+id/text_time_elapsed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Tempo trascorso: --"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:textColor="#000000"
+            app:layout_constraintTop_toBottomOf="@id/text_entrata"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Orario Uscita Suggerita -->
+        <TextView
+            android:id="@+id/text_uscita_suggerita"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:text="Uscita suggerita: --"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:textColor="#000000"
+            app:layout_constraintTop_toBottomOf="@id/text_time_elapsed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Orario Uscita -->
+        <TextView
+            android:id="@+id/text_uscita"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Orario uscita: Non registrato"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:textColor="#F44336"
+            app:layout_constraintTop_toBottomOf="@id/text_uscita_suggerita"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Differenza Giornaliera -->
+        <TextView
+            android:id="@+id/text_diff"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Orario effettivo: --\nDifferenza: --"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:textColor="#000000"
+            app:layout_constraintTop_toBottomOf="@id/text_uscita"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Pulsante per il Resoconto Settimanale -->
+        <Button
+            android:id="@+id/button_report"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Mostra Resoconto Settimanale"
+            app:layout_constraintTop_toBottomOf="@id/text_diff"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <Button
+            android:id="@+id/button_monthly_report"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Mostra Resoconto Mensile"
+            app:layout_constraintTop_toBottomOf="@id/button_report"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <!-- Pulsante Entrata -->
+        <Button
+            android:id="@+id/button_entrata"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Registra Entrata"
+            app:layout_constraintTop_toBottomOf="@id/button_monthly_report"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <!-- Pulsante Uscita -->
+        <Button
+            android:id="@+id/button_uscita"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Registra Uscita"
+            app:layout_constraintTop_toBottomOf="@id/button_entrata"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <!-- Gruppo per il Report Settimanale -->
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_report"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/button_uscita"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="gone">
+            <!-- Contenuto del report settimanale qui -->
+        </androidx.constraintlayout.widget.Group>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
